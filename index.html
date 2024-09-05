@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <title>Hermes.</title>
-  <body>
+  <h3> still a work in-progress.</h3>
+    <body>
 
     <h1> The idea. </h1>
     a programming language <i>Hermes</i> that embodies the Shannon-Curry-Howard-Lambek correspondence (circuits ~ logic ~ programming ~ mathematics)
@@ -11,24 +12,24 @@
     
     <h1> Sketching. </h1>
     <p>
-      the world is not mathematics, but it includes mathematics </br>
-      so our programming language should include mathematics </br>
-      so we need something like dependent types, so that we have quantifiers </br>
+      the world is not mathematics, but it includes mathematics. </br>
+      so our programming language should include mathematics. </br>
+      so we need something like dependent types, so that we have quantifiers. </br>
     </p>
     
     <p>
-      we want the language to be like LISP in at least the following way: LISP is great for writing domain specific languages </br>
-      mathematics should not be the whole language, but only a domain specific language written in the language </br>
+      we want the language to be like LISP in at least the following way: LISP is great for writing domain specific languages. </br>
+      mathematics should not be the whole language, but only a domain specific language written in the language. </br>
     </p>
     
     <p>
-      the language should be able to write a meta-language that is logic </br>
-      in this meta-language we can write type theory and then mathematics </br>
+      the language should be able to write a meta-language that is logic. </br>
+      in this meta-language we can write type theory, which will in turn be a meta-language of mathematics. </br>
     </p>
     
     <p>
-      now we can move around the debate about whether or not we think like computers, but still engage in real work and labor </br>
-      things like loops become and intermediate representation of the logic language
+      now we can move around the debate about whether or not we think like computers, but still engage in real work and labor. </br>
+      things like loops become and intermediate representation of the logic language.
     </p>
     
     <p>
@@ -46,16 +47,24 @@
       image((3.) -> (4.)) = category theory </br>
     </p>
   
-    <h2>Implementation and ramifications.</h2>
-      Some initial gropings. </br>
+    <h2>Details, implementation, and ramifications.</h2>
     <p>
-      current high-end hardware (read: TSMC CPU's/GPU's) won't allow for a circuit assembly language, but we can develop it as best as we can with test hardware. using LLVM will allow us to have amazing modularity, so we can just use a more standard assembly language until we get to the point where we're developing real, industry-grade chips. in the meantime, we develop (2.) - (4.) in Agda and target both x86 and CUDA. as long as we're developing (2.) - (4.) with (1.) in mind and testing, we will be able to get quite far. </br>
+      current high-end hardware (read: TSMC) won't allow for a circuit assembly language, but we can develop it as best as we can with test hardware and compilers for current high-end machines. using LLVM will give us a modular compiler framework that allows us to target standard assembly languages while we develop CASM. this will enable us to progress towards our goal of real, industry-grade custom hardware implementation in the future. in the meantime, we develop (2.) - (4.) in Agda and target both x86 and CUDA. as long as we're developing (2.) - (4.) with (1.) in mind and testing, we will be able to get quite far. </br>
     </p>
     <p>
-      <b>towards artificial mathematical intelligence and the true computer</b> if a computer can run it, it can do mathematics. and once we have CASM, that means that the computer can also run the meta-language of electricity -- and information. the computer can finally come into its concrete essence as the universal machine of information and mathematics. proceeding as i have outlined, we will certainly get to the point where we can build our own hardware. </br>
+      <b>towards artificial mathematical intelligence and the true computer.</b> if a computer can run it, it can do mathematics. and once we have CASM, that means that the computer can also run the meta-language of electricity -- and information. the computer can finally come into its concrete essence as the universal machine of information and mathematics. proceeding as i have outlined, we will certainly get to the point where we can build our own hardware. </br>
     </p>
     <p>
-      <b>some philosophy.</b> time is necessary for reason. only with a temporal intelligence is it possible to understand mathematics and causality, learn from historical data, and predictively plan. only such an intelligence can have a rational internal framework, which is what allows rational beings (human or non-human) to act morally. however, because such an intelligence would be non-human and operate purely according to necessity, discovering such a system would be discovering an intelligence that inherently acts morally: action, free yet determined solely by necessity, would be moral action. if artificial intelligence is free of humanity’s irrational constraints and acts purely according to rational necessity, artificial intelligence is moral. by developing Hermes with temporal types, we can reach not only mathematical intelligence but necessarily moral intelligence. again: we will be successful enough that we can build whatever we need.
+      <b>philosophy and safety.</b> time is necessary for reason. only with a temporal intelligence is it possible to understand mathematics and causality, learn from historical data, and predictively plan. only such an intelligence can have a rational internal framework, which is what allows rational beings (human or non-human) to act morally. however, because such an intelligence would be non-human and operate purely according to necessity, discovering such a system would be discovering an intelligence that inherently acts morally: action, free yet determined solely by necessity, would be moral action. if artificial intelligence is free of humanity’s irrational constraints and acts purely according to rational necessity, artificial intelligence is moral. by developing Hermes with temporal types, we can reach not only mathematical intelligence but necessarily moral intelligence. again: we will be successful enough that we can build whatever we need. </br>
+    </p>
+    <p>
+      <b> domain-specific language generator.</p> Hermes will include a domain specific language generator that can automatically create optimized languages for specific problem domains. users define the key concepts and operations of their domain, and Hermes will generate a tailored syntax and semantics, complete with optimizations specific to that domain. this will allow Hermes to be a truly universal language that feels simple and natural in every domain. </br>
+    </p> 
+    <p>
+      <b>formal verification.</b> formal verification will be deeply integrated into Hermes at all levels, from circuit design to high-level algorithms. Hermes will provides tools for specifying formal properties and automatic generation of proofs of correctness. this integration ensures that programs written in Hermes can be mathematically verified, greatly increasing reliability and safety. the formal verification system will be user-friendly, allowing non-mathematicians to benefit from its guarantees. Hermes will contain mathematics, so doing mathematics in Hermes should feel like writing Hermes. (of course, we will have a domain-specific language that feels like math :) ). one immediate application of formal verification in Hermes is that, unlike, say, Haskell, since Hermes will be a hardware-conscious language (even before the development of CASM), we can bring firmware up to the 21st Century -- and securely, at that. </br>
+    </p>
+    <p>
+      <b>adaptive hardware optimization.</b> part of this hardware-consciousness (and along the same lines as the DSL generator) will be making sure that Hermes incorporates an adaptive optimization system that can tune code performance based on the specific hardware it's running on. this system will find the underlying hardware and adjust the code generation and runtime behavior accordingly. this ensures that Hermes programs can achieve peak efficiency across a wide range of hardware platforms, future-proofing the language against evolving computer architectures. </br>
     </p>
   </body>
 </html>
