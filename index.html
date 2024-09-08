@@ -125,7 +125,7 @@
       <p>
         <b>Bridging AI and PL.</b> We propose a method to bridge the gap between programming language theory and artificial intelligence practice by modifying text token generation to incorporate the structure of natural deduction. Instead of predicting a single next token, we allow the model to maintain a tree or graph of potential token sequences. This shift gives us natural deduction:</br>
         <i>Natural deduction rules in language model predictions.</i>
-        <ol>
+         <ol>
           <li>
             Axiom: (\emptyset \mid (\Gamma , A) \vdash A\):</br>From context Γ and token A, the model predicts A;
           </li>
@@ -165,7 +165,7 @@
             ⊥ Elimination: \((\Gamma \vdash \bot) \mid (\Gamma \vdash A)\):</br>If model predicts ⊥ from Γ, it can predict any A from Γ
           </li>
         </ol>
-          When the model encounters a context with multiple valid continuations, it maintains all plausible paths, creating branches that correspond to different logical possibilities. </br>
+         When the model encounters a context with multiple valid continuations, it maintains all plausible paths, creating branches that correspond to different logical possibilities. </br>
 
           Conjunction (∧) emerges when the model considers two tokens or sequences as (roughly) equally valid continuations. </br>
           Disjunction (∨) appears when the model maintains multiple distinct possibilities without committing to one.</br>
