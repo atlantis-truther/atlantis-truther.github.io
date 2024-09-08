@@ -48,6 +48,7 @@
 </head>
 <body>
     <header>
+      <h1>Hermes</h1>
       <h3>still a work in-progress.</h3>
       <h3>anna at hermes-lang dot com</h3>
     </header>
@@ -55,16 +56,16 @@
     <main>
       <section>
         
-        <h1>The idea.</h1>
+        <h2>The idea.</h2>
         <p>A programming language <i>Hermes</i> that embodies the Shannon-Curry-Howard-Lambek correspondence (circuits ~ logic ~ programming ~ mathematics) and can bridge artificial intelligence practice and programming languages theory</p>
       </section>
         
       <section>
-        <h1>The spirit.</h1>
+        <h2>The spirit.</h2>
         <p>Dissolve these terrible differences that hold back technology/AI (hardware/software, ideal/real, etc...)</p>
       </section>
       <section>
-        <h1>Sketching.</h1>
+        <h2>Sketching.</h2>
         <p>
         The world is not mathematics, but it includes mathematics. <br>
         So our programming language should include mathematics. <br>
@@ -122,49 +123,90 @@
       <b>Adaptive hardware optimization.</b> Part of this hardware-consciousness (and along the same lines as the DSL generator) will be making sure that Hermes incorporates an adaptive optimization system that can tune code performance based on the specific hardware it's running on. This system will find the underlying hardware and adjust the code generation and runtime behavior accordingly. This ensures that Hermes programs can achieve peak efficiency across a wide range of hardware platforms, future-proofing the language against evolving computer architectures. <br>
       </p>
       <p>
-      <b>Bridging AI and PL.</b> We can begin to bridge the high theory of programming languages and the current practice of artificial intelligence by making some small modifications to text token generation so that next token gen has the structure of natural deduction, the logical basis of programming languages. <br>
-      </p>
-      <i>Natural deduction rules in language model predictions.</i>
-      <ol>
-      <li><strong>Axiom.</strong> \(\emptyset \mid (\Gamma , A) \vdash A\) means "from the context Γ and the token A, the model predicts A";</li>
-      <li><strong>∧I.</strong> \(((\Gamma \vdash A) , (\Gamma \vdash B)) \mid (\Gamma \vdash A \wedge B)\) means "if the model predicts token A from the context Γ and token B from Γ, the model predicts A ∧ B from Γ";</li>
-      <li><strong>∧E.</strong> \(\Gamma \vdash (A \wedge B) \mid (\Gamma \vdash A)\) means "if the model predicts A ∧ B from the context Γ, then the model predicts A from Γ";</li>
-      <li><strong>→I.</strong> \((\Gamma, A \vdash B) \mid \Gamma \vdash (A \rightarrow B)\) means "if the model predicts B from the context Γ and A, then the model predicts A → B from Γ";</li>
-      <li><strong>→E.</strong> \(((\Gamma \vdash A \rightarrow B) , (\Gamma \vdash A)) \mid (\Gamma \vdash B)\) means "if the model predicts A → B from context Γ and predicts A from Γ, then it predicts B from Γ";</li>
-      <li><strong>∨I.</strong> \((\Gamma \vdash A) \mid (\Gamma \vdash A \vee B)\) means "if the model predicts A from context Γ, then it predicts A ∨ B from Γ for any B";</li>
-      <li><strong>∨E.</strong> \(((\Gamma \vdash A \vee B), (\Gamma, A \vdash C) , (\Gamma, B \vdash C)) \mid (\Gamma \vdash C)\) means "if the model predicts A ∨ B from Γ, predicts C from Γ and A, and predicts C from Γ and B, then it predicts C from Γ";</li>
-      <li><strong>¬I.</strong> \((\Gamma, A \vdash \bot) \mid (\Gamma \vdash \neg A)\) means "if the model predicts a contradiction (⊥) from context Γ and A, then it predicts ¬A from Γ";</li>
-      <li><strong>¬E.</strong> \((\Gamma \vdash A), (\Gamma \vdash \neg A) \mid (\Gamma \vdash \bot)\) means "if the model predicts A from Γ and ¬A from Γ, then it predicts a contradiction (⊥) from Γ";</li>
-      <li><strong>⊤ I.</strong> \(\Gamma \vdash \top\) means "the model can always predict truth (⊤) from any context Γ";</li>
-      <li><strong>⊥E.</strong> \((\Gamma \vdash \bot) \mid (\Gamma \vdash A)\) means "if the model predicts a contradiction/absurdity (⊥) from context Γ, then it can predict any A from Γ"</li>
-      </ol>
-      </br>
-      <p> 
-      The fundamental change we need to make is in how the model generates and considers tokens. Instead of predicting a single next token, we allow the model to maintain a tree or graph of potential token sequences. This shift alone introduces natural deduction.</br>
-      </p>
-      <p>
-      For example, when the model encounters a context that could lead to multiple valid continuations, it doesn't need to choose just one. It can maintain all plausible paths, effectively creating branches that correspond to different logical possibilities. This branching structure naturally maps to the introduction and elimination rules of natural deduction.</br>
-      </p>
-      <p>
-      Conjunction (∧) emerges when the model considers two tokens or sequences as equally valid continuations. Disjunction (∨) appears when the model maintains multiple distinct possibilities without committing to one. Implication (→) can be represented by the model's understanding of how one token or sequence tends to lead to another. Absurdity</br>
-      </p>
-      <p>
-      By allowing the model to work with this tree of possibilities, we're not beating it over the head with formal logic until it conforms to some rigid model of thought. Instead, we're allowing it to discover and utilize logical structures that are inherent in language and reasoning, similar to the way humans come to reason. The model becomes capable of exploring multiple lines of thought, backtracking when it reaches contradictions (analogous to negation), and forming complex chains of reasoning.</br>
-      </p>
-      <p>
-      This approach doesn't require us to abandon the powerful techniques that have helped large language models to succeed as well as they have. Instead, it builds upon them, extending model capabilities to include more structured reasoning without explicitly training on logical formulae. The best success of such an approach would be training the model, observing that it has reason, showing it the formulae, and watching it say , "Wow, I think this way!", similar to what happens when we first encounter formal logic.</br>
-      </p>
-      <p>
-      To implement this, we primarily need to modify the decoding process to maintain and work with multiple token sequences simultaneously. The training process would need to be adjusted to reward the model for maintaining a diverse yet coherent set of possibilities. The attention mechanisms and neural architecture can largely remain the same, as they're already capable of handling complex relationships between tokens.</br>
-      </p>
-      <p>
-      This 'perspectivalism', emerging from the consideration of multiple possibilities, forms the basis for verification within the model. The model can essentially argue with itself, considering different viewpoints and consequences, all within its expanded token generation process. </br>
-      </p>
-      <p>
-      We're not forcing formal logic onto the language model, but rather allowing the logical structures inherent in language to emerge naturally through the model's ability to consider multiple possibilities concurrently. 
-      </p>
-      <p>
-      All we need is right-thinking and compute to accomplish superintelligence. </br>
+        <b>Bridging AI and PL.</b> We propose a method to bridge the gap between programming language theory and artificial intelligence practice by modifying text token generation to incorporate the structure of natural deduction. Instead of predicting a single next token, we allow the model to maintain a tree or graph of potential token sequences. This shift gives us natural deduction:</br>
+        <i>Natural deduction rules in language model predictions.</i>
+        <table>
+          <tr>
+            <th>Rule</th>
+            <th>Formal Notation</th>
+            <th>Interpretation in Language Model</th>
+          </tr>
+          <tr>
+            <td>Axiom</td>
+            <td>\(\emptyset \mid (\Gamma , A) \vdash A\)</td>
+            <td>From context Γ and token A, the model predicts A</td>
+          </tr>
+          <tr>
+            <td>∧ Introduction</td>
+            <td>\(((\Gamma \vdash A) , (\Gamma \vdash B)) \mid (\Gamma \vdash A \wedge B)\)</td>
+            <td>If model predicts A and B from Γ, it predicts A ∧ B from Γ</td>
+          </tr>
+          <tr>
+            <td>Left ∧ Elimination</td>
+            <td>\(\Gamma \vdash (A \wedge B) \mid (\Gamma \vdash A)\)</td>
+            <td>If model predicts A ∧ B from Γ, it predicts A from Γ</td>
+          </tr>
+          <tr>
+            <td>Right ∧ Elimination</td>
+            <td>\(\Gamma \vdash (A \wedge B) \mid (\Gamma \vdash A)\)</td>
+            <td>If model predicts A ∧ B from Γ, it predicts B from Γ</td>
+          </tr>
+          <tr>
+            <td>→ Introduction</td>
+            <td>\((\Gamma, A \vdash B) \mid \Gamma \vdash (A \rightarrow B)\)</td>
+            <td>If model predicts B from Γ and A, it predicts A → B from Γ</td>
+          </tr>
+          <tr>
+            <td>→ Elimination</td>
+            <td>\(((\Gamma \vdash A \rightarrow B) , (\Gamma \vdash A)) \mid (\Gamma \vdash B)\)</td>
+            <td>If model predicts A → B and A from Γ, it predicts B from Γ</td>
+          </tr>
+          <tr>
+            <td>Left ∨ Introduction</td>
+            <td>\((\Gamma \vdash A) \mid (\Gamma \vdash A \vee B)\)</td>
+            <td>If model predicts A from Γ, it predicts A ∨ B from Γ for any B</td>
+          </tr>
+          <tr>
+            <td>Right ∨ Introduction</td>
+            <td>\((\Gamma \vdash A) \mid (\Gamma \vdash A \vee B)\)</td>
+            <td>If model predicts B from Γ, it predicts A ∨ B from Γ for any A</td>
+          </tr>
+          <tr>
+            <td>∨ Elimination</td>
+            <td>\(((\Gamma \vdash A \vee B), (\Gamma, A \vdash C) , (\Gamma, B \vdash C)) \mid (\Gamma \vdash C)\)</td>
+            <td>If model predicts A ∨ B from Γ, C from Γ and A, and C from Γ and B, it predicts C from Γ</td>
+          </tr>
+          <tr>
+            <td>¬ Introduction</td>
+            <td>\((\Gamma, A \vdash \bot) \mid (\Gamma \vdash \neg A)\)</td>
+            <td>If model predicts ⊥ from Γ and A, it predicts ¬A from Γ</td>
+          </tr>
+          <tr>
+            <td>¬ Elimination</td>
+            <td>\((\Gamma \vdash A), (\Gamma \vdash \neg A) \mid (\Gamma \vdash \bot)\)</td>
+            <td>If model predicts A and ¬A from Γ, it predicts ⊥ from Γ</td>
+          </tr>
+          <tr>
+            <td>⊤ Introduction</td>
+            <td>\(\Gamma \vdash \top\)</td>
+            <td>Model can always predict ⊤ from any context Γ</td>
+          </tr>
+          <tr>
+            <td>⊥ Elimination</td>
+            <td>\((\Gamma \vdash \bot) \mid (\Gamma \vdash A)\)</td>
+            <td>If model predicts ⊥ from Γ, it can predict any A from Γ</td>
+          </tr>
+        </table>
+          When the model encounters a context with multiple valid continuations, it maintains all plausible paths, creating branches that correspond to different logical possibilities. </br>
+
+          Conjunction (∧) emerges when the model considers two tokens or sequences as (roughly) equally valid continuations. </br>
+          Disjunction (∨) appears when the model maintains multiple distinct possibilities without committing to one.</br>
+          Implication (→) is represented by the model's understanding of how one token or sequence tends to lead to another.</br>
+          Negation (¬) and absurdity (⊥) arise when the model encounters contradictions or absurdities. </br>
+
+          This approach allows the model to discover and utilize logical structures inherent in language. The model becomes capable of exploring multiple lines of thought, backtracking when it reaches contradictions, and forming complex chains of reasoning. This forms the basis of verification within the model.</br>
+          Implementation primarily requires modifying the decoding process to maintain and work with multiple token sequences simultaneously. The training process would need adjustment to reward the model for maintaining a diverse yet coherent set of possibilities. Attention mechanisms and neural architecture can largely remain unchanged (at least at first), as they're already capable of handling complex relationships between tokens.</br>
+          By allowing logical structures to emerge naturally, we build upon existing successful techniques in large language models while extending their capabilities to include more structured reasoning. </br>    
       </p>
     </section>
   </main>
