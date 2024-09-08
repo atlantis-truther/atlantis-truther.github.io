@@ -125,78 +125,46 @@
       <p>
         <b>Bridging AI and PL.</b> We propose a method to bridge the gap between programming language theory and artificial intelligence practice by modifying text token generation to incorporate the structure of natural deduction. Instead of predicting a single next token, we allow the model to maintain a tree or graph of potential token sequences. This shift gives us natural deduction:</br>
         <i>Natural deduction rules in language model predictions.</i>
-        <table>
-          <tr>
-            <th>Rule</th>
-            <th>Formal Notation</th>
-            <th>Interpretation in Language Model</th>
-          </tr>
-          <tr>
-            <td>Axiom</td>
-            <td>\(\emptyset \mid (\Gamma , A) \vdash A\)</td>
-            <td>From context Γ and token A, the model predicts A</td>
-          </tr>
-          <tr>
-            <td>∧ Introduction</td>
-            <td>\(((\Gamma \vdash A) , (\Gamma \vdash B)) \mid (\Gamma \vdash A \wedge B)\)</td>
-            <td>If model predicts A and B from Γ, it predicts A ∧ B from Γ</td>
-          </tr>
-          <tr>
-            <td>Left ∧ Elimination</td>
-            <td>\(\Gamma \vdash (A \wedge B) \mid (\Gamma \vdash A)\)</td>
-            <td>If model predicts A ∧ B from Γ, it predicts A from Γ</td>
-          </tr>
-          <tr>
-            <td>Right ∧ Elimination</td>
-            <td>\(\Gamma \vdash (A \wedge B) \mid (\Gamma \vdash A)\)</td>
-            <td>If model predicts A ∧ B from Γ, it predicts B from Γ</td>
-          </tr>
-          <tr>
-            <td>→ Introduction</td>
-            <td>\((\Gamma, A \vdash B) \mid \Gamma \vdash (A \rightarrow B)\)</td>
-            <td>If model predicts B from Γ and A, it predicts A → B from Γ</td>
-          </tr>
-          <tr>
-            <td>→ Elimination</td>
-            <td>\(((\Gamma \vdash A \rightarrow B) , (\Gamma \vdash A)) \mid (\Gamma \vdash B)\)</td>
-            <td>If model predicts A → B and A from Γ, it predicts B from Γ</td>
-          </tr>
-          <tr>
-            <td>Left ∨ Introduction</td>
-            <td>\((\Gamma \vdash A) \mid (\Gamma \vdash A \vee B)\)</td>
-            <td>If model predicts A from Γ, it predicts A ∨ B from Γ for any B</td>
-          </tr>
-          <tr>
-            <td>Right ∨ Introduction</td>
-            <td>\((\Gamma \vdash A) \mid (\Gamma \vdash A \vee B)\)</td>
-            <td>If model predicts B from Γ, it predicts A ∨ B from Γ for any A</td>
-          </tr>
-          <tr>
-            <td>∨ Elimination</td>
-            <td>\(((\Gamma \vdash A \vee B), (\Gamma, A \vdash C) , (\Gamma, B \vdash C)) \mid (\Gamma \vdash C)\)</td>
-            <td>If model predicts A ∨ B from Γ, C from Γ and A, and C from Γ and B, it predicts C from Γ</td>
-          </tr>
-          <tr>
-            <td>¬ Introduction</td>
-            <td>\((\Gamma, A \vdash \bot) \mid (\Gamma \vdash \neg A)\)</td>
-            <td>If model predicts ⊥ from Γ and A, it predicts ¬A from Γ</td>
-          </tr>
-          <tr>
-            <td>¬ Elimination</td>
-            <td>\((\Gamma \vdash A), (\Gamma \vdash \neg A) \mid (\Gamma \vdash \bot)\)</td>
-            <td>If model predicts A and ¬A from Γ, it predicts ⊥ from Γ</td>
-          </tr>
-          <tr>
-            <td>⊤ Introduction</td>
-            <td>\(\Gamma \vdash \top\)</td>
-            <td>Model can always predict ⊤ from any context Γ</td>
-          </tr>
-          <tr>
-            <td>⊥ Elimination</td>
-            <td>\((\Gamma \vdash \bot) \mid (\Gamma \vdash A)\)</td>
-            <td>If model predicts ⊥ from Γ, it can predict any A from Γ</td>
-          </tr>
-        </table>
+        <ol>
+          <li>
+            Axiom: (\emptyset \mid (\Gamma , A) \vdash A\):</br>From context Γ and token A, the model predicts A;
+          </li>
+          <li>
+            ∧ Introduction: (((\Gamma \vdash A) , (\Gamma \vdash B)) \mid (\Gamma \vdash A \wedge B)\):</br>If the model predicts A and B from Γ, it predicts A ∧ B from Γ;
+          </li>
+          <li>
+            Left ∧ Elimination: \(\Gamma \vdash (A \wedge B) \mid (\Gamma \vdash A)\):</br>If the model predicts A ∧ B from Γ, it predicts A from Γ;
+          </li>
+          <li>
+            Right ∧ Elimination: \(\Gamma \vdash (A \wedge B) \mid (\Gamma \vdash A)\):</br>If the model predicts A ∧ B from Γ, it predicts B from Γ;
+          <li>
+            → Introduction: ((\Gamma, A \vdash B) \mid \Gamma \vdash (A \rightarrow B)\):</br>If the model predicts B from Γ and A, it predicts A → B from Γ;
+          </li>
+          <li>
+            → Elimination: \(((\Gamma \vdash A \rightarrow B) , (\Gamma \vdash A)) \mid (\Gamma \vdash B)\):</br> If the model predicts A → B and A from Γ, it predicts B from Γ;
+          </li>
+          <li>
+            Left ∨ Introduction: ((\Gamma \vdash A) \mid (\Gamma \vdash A \vee B)\):</br>If the model predicts A from Γ, it predicts A ∨ B from Γ for any B;
+          </li>
+          <li>
+            Right ∨ Introduction: \((\Gamma \vdash A) \mid (\Gamma \vdash A \vee B)\):</br>If the model predicts B from Γ, it predicts A ∨ B from Γ for any A;
+          </li>
+          <li>
+            ∨ Elimination: (((\Gamma \vdash A \vee B), (\Gamma, A \vdash C) , (\Gamma, B \vdash C)) \mid (\Gamma \vdash C)\):</br>If the model predicts A ∨ B from Γ, C from Γ and A, and C from Γ and B, it predicts C from Γ;
+          </li>
+          <li>
+            ¬ Introduction: \((\Gamma, A \vdash \bot) \mid (\Gamma \vdash \neg A)\):</br>If the model predicts ⊥ from Γ and A, it predicts ¬A from Γ</td>
+          </li>
+          <li>
+            ¬ Elimination: \((\Gamma \vdash A), \((\Gamma \vdash \neg A)\) \mid (\Gamma \vdash \bot)\):</br>If the model predicts A and ¬A from Γ, it predicts ⊥ from Γ</td>
+          </li>
+          <li>
+            ⊤ Introduction: \(\emptyset \mid \Gamma \vdash \top\):</br>The model can predict ⊤ from any context Γ</td>
+          </li>
+          <li>
+            ⊥ Elimination: \((\Gamma \vdash \bot) \mid (\Gamma \vdash A)\):</br>If model predicts ⊥ from Γ, it can predict any A from Γ
+          </li>
+        </ol>
           When the model encounters a context with multiple valid continuations, it maintains all plausible paths, creating branches that correspond to different logical possibilities. </br>
 
           Conjunction (∧) emerges when the model considers two tokens or sequences as (roughly) equally valid continuations. </br>
