@@ -1,71 +1,174 @@
 <!DOCTYPE html>
-<html>
-  <title>Hermes.</title>
-  <h3>still a work in-progress.</h3>
-  <h3>anna at hermes-lang dot com</h3>
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermes</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    h2 {
+      font-size: 2em;
+    }
 
-    <h1> The idea. </h1>
-    a programming language <i>Hermes</i> that embodies the Shannon-Curry-Howard-Lambek correspondence (circuits ~ logic ~ programming ~ mathematics)
+    h3 {
+      font-size: 1.5em;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    ol {
+      padding-left: 2em;
+    }
+    @media (max-width: 786px) {
+      body {
+        font-size: 16px;
+        padding: 15px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.7em;
+      }
+      h3 {
+        font-size: 1.3em;
+      }
+    }
+
+      </style>
+</head>
+<body>
+    <header>
+      <h3>still a work in-progress.</h3>
+      <h3>anna at hermes-lang dot com</h3>
+    </header>
     
-    <h1> The spirit. </h1>
-    dissolve all these nonsense differences (hardware/software, ideal/real, etc...)
-    
-    <h1> Sketching. </h1>
-    <p>
-      the world is not mathematics, but it includes mathematics. </br>
-      so our programming language should include mathematics. </br>
-      so we need something like dependent types, so that we have quantifiers. </br>
-    </p>
-    
-    <p>
-      we want the language to be like LISP in at least the following way: LISP is great for writing domain specific languages. </br>
-      mathematics should not be the whole language, but only a domain specific language written in the language. </br>
-    </p>
-    
-    <p>
-      the language should be able to write a meta-language that is logic. </br>
-      in this meta-language we can write type theory, which will in turn be a meta-language of mathematics. </br>
-    </p>
-    
-    <p>
-      now we can move around the debate about whether or not we think like computers, but still engage in real work and labor. </br>
-      things like loops become and intermediate representation of the logic language.
-    </p>
-    
-    <p>
-      four major components: (1.) circuits, (2.) logic, (3.) programming, and (4.) mathematics. (N.B. I take the word mathematics to mean the meta-language of mathematics: that language that canonically expresses all 'fields' of mathematics.) </br>
-      to reiterate, these are all the same (isomorphic). we just need to implement (engineer) their sameness. we need a way of moving, concretely, from the bottom to the top, from the top to the bottom.
-    </p>
-  
-    <p>
-      we need a new assembly language, circuit assembly (CASM), a canonical meta-language of electricity.
-    </p>
-    
-    <p>
-      image((1.) -> (2.)) = combinatory logic; </br>
-      image((2.) -> (3.)) = type theory; </br>
-      image((3.) -> (4.)) = category theory </br>
-    </p>
-  
-    <h2>Details, implementation, and ramifications.</h2>
-    <p>
-      current high-end hardware (read: TSMC) won't allow for a circuit assembly language, but we can develop it as best as we can with test hardware and compilers for current high-end machines. using LLVM will give us a modular compiler framework that allows us to target standard assembly languages while we develop CASM. this will enable us to progress towards our goal of real, industry-grade custom hardware implementation in the future. in the meantime, we develop (2.) - (4.) in Agda and target both x86 and CUDA. as long as we're developing (2.) - (4.) with (1.) in mind and testing, we will be able to get quite far. </br>
-    </p>
-    <p>
-      <b>towards artificial mathematical intelligence and the true computer.</b> if a computer can run it, it can do mathematics. and once we have CASM, that means that the computer can also run the meta-language of electricity -- and information. the computer can finally come into its concrete essence as the universal machine of information and mathematics. proceeding as i have outlined, we will certainly get to the point where we can build our own hardware. </br>
-    </p>
-    <p>
-      <b>philosophy and safety.</b> time is necessary for reason. only with a temporal intelligence is it possible to understand mathematics and causality, learn from historical data, and predictively plan. only such an intelligence can have a rational internal framework, which is what allows rational beings (human or non-human) to act morally. however, because such an intelligence would be non-human and operate purely according to necessity, discovering such a system would be discovering an intelligence that inherently acts morally: action, free yet determined solely by necessity, would be moral action. if artificial intelligence is free of humanity’s irrational constraints and acts purely according to rational necessity, artificial intelligence is moral. by developing Hermes with temporal types, we can reach not only mathematical intelligence but necessarily moral intelligence. again: we will be successful enough that we can build whatever we need. </br>
-    </p>
-    <p>
-      <b> domain-specific language generator.</b> Hermes will include a domain specific language generator that can automatically create optimized languages for specific problem domains. users define the key concepts and operations of their domain, and Hermes will generate a tailored syntax and semantics, complete with optimizations specific to that domain. this will allow Hermes to be a truly universal language that feels simple and natural in every domain. </br>
-    </p> 
-    <p>
-      <b>formal verification.</b> formal verification will be deeply integrated into Hermes at all levels, from circuit design to high-level algorithms. Hermes will provides tools for specifying formal properties and automatic generation of proofs of correctness. this integration ensures that programs written in Hermes can be mathematically verified, greatly increasing reliability and safety. the formal verification system will be user-friendly, allowing non-mathematicians to benefit from its guarantees. Hermes will contain mathematics, so doing mathematics in Hermes should feel like writing Hermes. (of course, we will have a domain-specific language that feels like math :) ). one immediate application of formal verification in Hermes is that, unlike, say, Haskell, since Hermes will be a hardware-conscious language (even before the development of CASM), we can bring firmware up to the 21st Century -- and securely, at that. </br>
-    </p>
-    <p>
-      <b>adaptive hardware optimization.</b> part of this hardware-consciousness (and along the same lines as the DSL generator) will be making sure that Hermes incorporates an adaptive optimization system that can tune code performance based on the specific hardware it's running on. this system will find the underlying hardware and adjust the code generation and runtime behavior accordingly. this ensures that Hermes programs can achieve peak efficiency across a wide range of hardware platforms, future-proofing the language against evolving computer architectures. </br>
-    </p>
-  </body>
+    <main>
+      <section>
+        
+        <h1>The idea.</h1>
+        <p>A programming language <i>Hermes</i> that embodies the Shannon-Curry-Howard-Lambek correspondence (circuits ~ logic ~ programming ~ mathematics) and can bridge artificial intelligence practice and programming languages theory</p>
+      </section>
+        
+      <section>
+        <h1>The spirit.</h1>
+        <p>Dissolve all these nonsense differences (hardware/software, ideal/real, etc...)</p>
+      </section>
+      <section>
+        <h1>Sketching.</h1>
+        <p>
+        The world is not mathematics, but it includes mathematics. <br>
+        So our programming language should include mathematics. <br>
+        So we need something like dependent types, so that we have quantifiers. <br>
+        </p>
+
+        <p>
+        We want the language to be like LISP in at least the following way: LISP is great for writing domain specific languages. </br>
+        Mathematics should not be the whole language, but only a domain specific language written in the language. <br>
+       </p>
+
+       <p>
+       The language should be able to write a meta-language that is logic. <br>
+       In this meta-language we can write type theory, which will in turn be a meta-language of mathematics. <br>
+       </p>
+
+       <p>
+       Now we can move around the debate about whether or not we think like computers, but still engage in real work and labor. <br>
+       Things like loops become and intermediate representation of the logic language.
+       </p>
+
+       <p>
+       Four major components: (1.) circuits, (2.) logic, (3.) programming, and (4.) mathematics. (N.B. I take the word mathematics to mean the meta-language of mathematics: that language that canonically expresses all 'fields' of mathematics.) <br>
+       To reiterate, these are all the same (isomorphic). We just need to implement (engineer) their sameness. We need a way of moving, concretely, from the bottom to the top, from the top to the bottom.
+       </p>
+
+       <p>
+       We need a new assembly language, circuit assembly (CASM), a canonical meta-language of electricity.
+       </p>
+
+       <p>
+       image((1.) -> (2.)) = combinatory logic; <br>
+       image((2.) -> (3.)) = type theory; <br>
+       image((3.) -> (4.)) = category theory <br>
+       </p>
+      </section>
+      <section>
+      <h2>Details, implementation, and ramifications.</h2>
+      <p>
+      Current high-end hardware (read: TSMC) won't allow for a circuit assembly language, but we can develop it as best as we can with test hardware and compilers for current high-end machines. Using LLVM will give us a modular compiler framework that allows us to target standard assembly languages while we develop CASM. This will enable us to progress towards our goal of real, industry-grade custom hardware implementation in the future. In the meantime, we develop (2.) - (4.) in Agda and target both x86 and CUDA. As long as we're developing (2.) - (4.) with (1.) in mind and testing, we will be able to get quite far. <br>
+      </p>
+      <p>
+      <b>Towards artificial mathematical intelligence and the true computer.</b> If a computer can run it, it can do mathematics. and once we have CASM, that means that the computer can also run the meta-language of electricity -- and information. The computer can finally come into its concrete essence as the universal machine of information and mathematics. Proceeding as i have outlined, we will certainly get to the point where we can build our own hardware. <br>
+      </p>
+      <p>
+      <b>Philosophy and safety.</b> Time is necessary for reason. Only with a temporal intelligence is it possible to understand mathematics and causality, learn from historical data, and predictively plan. Only such an intelligence can have a rational internal framework, which is what allows rational beings (human or non-human) to act morally. However, because such an intelligence would be non-human and operate purely according to necessity, discovering such a system would be discovering an intelligence that inherently acts morally: Action, free yet determined solely by necessity, would be moral action. If artificial intelligence is free of humanity's irrational constraints and acts purely according to rational necessity, artificial intelligence is moral. By developing Hermes with temporal types, we can reach not only mathematical intelligence but necessarily moral intelligence. <br>
+      </p>
+      <p>
+      <b>Domain-specific language generator.</b> Hermes will include a domain specific language generator that can automatically create optimized languages for specific problem domains. Users define the key concepts and operations of their domain, and Hermes will generate a tailored syntax and semantics, complete with optimizations specific to that domain. This will allow Hermes to be a truly universal language that feels simple and natural in every domain. <br>
+      </p> 
+      <p>
+      <b>Formal verification.</b> Formal verification will be deeply integrated into Hermes at all levels, from circuit design to high-level algorithms. Hermes will provides tools for specifying formal properties and automatic generation of proofs of correctness. This integration ensures that programs written in Hermes can be mathematically verified, greatly increasing reliability and safety. The formal verification system will be user-friendly, allowing non-mathematicians to benefit from its guarantees. Hermes will contain mathematics, so doing mathematics in Hermes should feel like writing Hermes. (Of course, we will have a domain-specific language that feels like math :) ). One immediate application of formal verification in Hermes is that, unlike, say, Haskell, since Hermes will be a hardware-conscious language (even before the development of CASM), we can bring firmware up to the 21st Century -- and securely, at that. <br>
+      </p>
+      <p>
+      <b>Adaptive hardware optimization.</b> Part of this hardware-consciousness (and along the same lines as the DSL generator) will be making sure that Hermes incorporates an adaptive optimization system that can tune code performance based on the specific hardware it's running on. This system will find the underlying hardware and adjust the code generation and runtime behavior accordingly. This ensures that Hermes programs can achieve peak efficiency across a wide range of hardware platforms, future-proofing the language against evolving computer architectures. <br>
+      </p>
+      <p>
+      <b>Bridging AI and PL.</b> We can begin to bridge the high theory of programming languages and the current practice of artificial intelligence by making some small modifications to text token generation so that next token gen has the structure of natural deduction, the logical basis of programming languages. <br>
+      </p>
+      <i>Natural deduction rules in language model predictions.</i>
+      <ol>
+      <li><strong>Axiom.</strong> \(\emptyset \mid (\Gamma , A) \vdash A\) means "from the context Γ and the token A, the model predicts A";</li>
+      <li><strong>∧I.</strong> \(((\Gamma \vdash A) , (\Gamma \vdash B)) \mid (\Gamma \vdash A \wedge B)\) means "if the model predicts token A from the context Γ and token B from Γ, the model predicts A ∧ B from Γ";</li>
+      <li><strong>∧E.</strong> \(\Gamma \vdash (A \wedge B) \mid (\Gamma \vdash A)\) means "if the model predicts A ∧ B from the context Γ, then the model predicts A from Γ";</li>
+      <li><strong>→I.</strong> \((\Gamma, A \vdash B) \mid \Gamma \vdash (A \rightarrow B)\) means "if the model predicts B from the context Γ and A, then the model predicts A → B from Γ";</li>
+      <li><strong>→E.</strong> \(((\Gamma \vdash A \rightarrow B) , (\Gamma \vdash A)) \mid (\Gamma \vdash B)\) means "if the model predicts A → B from context Γ and predicts A from Γ, then it predicts B from Γ";</li>
+      <li><strong>∨I.</strong> \((\Gamma \vdash A) \mid (\Gamma \vdash A \vee B)\) means "if the model predicts A from context Γ, then it predicts A ∨ B from Γ for any B";</li>
+      <li><strong>∨E.</strong> \(((\Gamma \vdash A \vee B), (\Gamma, A \vdash C) , (\Gamma, B \vdash C)) \mid (\Gamma \vdash C)\) means "if the model predicts A ∨ B from Γ, predicts C from Γ and A, and predicts C from Γ and B, then it predicts C from Γ";</li>
+      <li><strong>¬I.</strong> \((\Gamma, A \vdash \bot) \mid (\Gamma \vdash \neg A)\) means "if the model predicts a contradiction (⊥) from context Γ and A, then it predicts ¬A from Γ";</li>
+      <li><strong>¬E.</strong> \((\Gamma \vdash A), (\Gamma \vdash \neg A) \mid (\Gamma \vdash \bot)\) means "if the model predicts A from Γ and ¬A from Γ, then it predicts a contradiction (⊥) from Γ";</li>
+      <li><strong>⊤ I.</strong> \(\Gamma \vdash \top\) means "the model can always predict truth (⊤) from any context Γ";</li>
+      <li><strong>⊥E.</strong> \((\Gamma \vdash \bot) \mid (\Gamma \vdash A)\) means "if the model predicts a contradiction/absurdity (⊥) from context Γ, then it can predict any A from Γ";</li>
+      </ol>
+      </br>
+      <p> 
+      The fundamental change we need to make is in how the model generates and considers tokens. Instead of predicting a single next token, we allow the model to maintain a tree or graph of potential token sequences. This shift alone introduces natural deduction.</br>
+      </p>
+      <p>
+      For example, when the model encounters a context that could lead to multiple valid continuations, it doesn't need to choose just one. It can maintain all plausible paths, effectively creating branches that correspond to different logical possibilities. This branching structure naturally maps to the introduction and elimination rules of natural deduction.</br>
+      </p>
+      <p>
+      Conjunction (∧) emerges when the model considers two tokens or sequences as equally valid continuations. Disjunction (∨) appears when the model maintains multiple distinct possibilities without committing to one. Implication (→) can be represented by the model's understanding of how one token or sequence tends to lead to another. Absurdity</br>
+      </p>
+      <p>
+      By allowing the model to work with this tree of possibilities, we're not beating it over the head with formal logic until it conforms to some rigid model of thought. Instead, we're allowing it to discover and utilize logical structures that are inherent in language and reasoning, similar to the way humans come to reason. The model becomes capable of exploring multiple lines of thought, backtracking when it reaches contradictions (analogous to negation), and forming complex chains of reasoning.</br>
+      </p>
+      <p>
+      This approach doesn't require us to abandon the powerful techniques that have helped large language models to succeed as well as they have. Instead, it builds upon them, extending model capabilities to include more structured reasoning without explicitly training on logical formulae. The best success of such an approach would be training the model, observing that it has reason, showing it the formulae, and watching it say , "Wow, I think this way!", similar to what happens when we first encounter formal logic.</br>
+      </p>
+      <p>
+      To implement this, we primarily need to modify the decoding process to maintain and work with multiple token sequences simultaneously. The training process would need to be adjusted to reward the model for maintaining a diverse yet coherent set of possibilities. The attention mechanisms and neural architecture can largely remain the same, as they're already capable of handling complex relationships between tokens.</br>
+      </p>
+      <p>
+      This 'perspectivalism', emerging from the consideration of multiple possibilities, forms the basis for verification within the model. The model can essentially argue with itself, considering different viewpoints and consequences, all within its expanded token generation process. </br>
+      </p>
+      <p>
+      We're not forcing formal logic onto the language model, but rather allowing the logical structures inherent in language to emerge naturally through the model's ability to consider multiple possibilities concurrently. 
+      </p>
+      <p>
+      All we need is right-thinking and compute to accomplish superintelligence. </br>
+      </p>
+    </section>
+  </main>
+</body>
 </html>
