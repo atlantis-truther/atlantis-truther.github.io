@@ -136,7 +136,7 @@
             Left ∧ Elimination: \(\Gamma \vdash A \wedge B \mid \Gamma \vdash A\):</br>If the model predicts A ∧ B from Γ, it predicts A from Γ;
           </li>
           <li>
-            Right ∧ Elimination: \(\Gamma \vdash A \wedge B \mid \Gamma \vdash A\):</br>If the model predicts A ∧ B from Γ, it predicts B from Γ;
+            Right ∧ Elimination: \(\Gamma \vdash A \wedge B \mid \Gamma \vdash B\):</br>If the model predicts A ∧ B from Γ, it predicts B from Γ;
           <li>
             → Introduction: \((\Gamma, A) \vdash B \mid \Gamma \vdash A \rightarrow B\):</br>If the model predicts B from Γ and A, it predicts A → B from Γ;
           </li>
@@ -147,7 +147,7 @@
             Left ∨ Introduction: \(\Gamma \vdash A \mid \Gamma \vdash A \vee B\):</br>If the model predicts A from Γ, it predicts A ∨ B from Γ for any B;
           </li>
           <li>
-            Right ∨ Introduction: \(\Gamma \vdash A \mid \Gamma \vdash A \vee B\):</br>If the model predicts B from Γ, it predicts A ∨ B from Γ for any A;
+            Right ∨ Introduction: \(\Gamma \vdash B \mid \Gamma \vdash A \vee B\):</br>If the model predicts B from Γ, it predicts A ∨ B from Γ for any A;
           </li>
           <li>
             ∨ Elimination: \(((\Gamma \vdash A \vee B), (\Gamma, A \vdash C) , (\Gamma, B \vdash C)) \mid \Gamma \vdash C\):</br>If the model predicts A ∨ B from Γ, C from Γ and A, and C from Γ and B, it predicts C from Γ;
