@@ -50,54 +50,23 @@
     <p>The Shannon-Curry-Howard-Lambek correspondence is a fundamental principle that establishes the isomorphism between circuits, logic, programming, and mathematics. This correspondence has deep historical roots and profound implications for computer science and artificial intelligence.</p>
     <p>In his 1940 Master's thesis "A Symbolic Analysis of Relay and Switching Circuits," Claude Shannon first established the isomorphism between circuits and propositional logic. This groundbreaking work laid the foundation for modern electrical engineering. The correspondence was later extended to include the relationship between logic and programming (Curry-Howard isomorphism) and further expanded to encompass category theory (Lambek).</p>
     <p>In its complete form, the correspondence demonstrates the identity of mathematics, programming, logic, and circuits. This reveals that mathematics is not just an abstract concept, but a real phenomenon in nature. Understanding and implementing this correspondence is crucial for developing artificial mathematical intelligence. The task becomes one of engineering the sameness of these four domains.</p>
-    <p>This unified view dissolves the perceived divide between AI and programming language theory, showing that they are not truly at odds. Hermes embodies this correspondence, providing a concrete implementation that bridges these fundamental aspects of computation and reasoning. By doing so, it creates a powerful framework for advancing artificial intelligence and mathematical reasoning.</p>
-
-    <h3>2. Logic of Next Token Prediction: Bridging AI and PL</h3>
-    <p>This section presents a method to bridge the gap between programming language theory and artificial intelligence practice by modifying text token generation to incorporate the structure of natural deduction.</p>
 
     <h4>Natural deduction rules in language model predictions:</h4>
     <ol>
-        <li>
-          Axiom: \(\emptyset \mid (\Gamma , A) \vdash A\):<br>From context Γ and token A, the model predicts A;
-        </li>
-        <li>
-          ∧ Introduction: \(((\Gamma \vdash A) , (\Gamma \vdash B)) \mid \Gamma \vdash A \wedge B\):<br>If the model predicts A and B from Γ, it predicts A ∧ B from Γ;
-        </li>
-        <li>
-          Left ∧ Elimination: \(\Gamma \vdash A \wedge B \mid \Gamma \vdash A\):<br>If the model predicts A ∧ B from Γ, it predicts A from Γ;
-        </li>
-        <li>
-          Right ∧ Elimination: \(\Gamma \vdash A \wedge B \mid \Gamma \vdash B\):<br>If the model predicts A ∧ B from Γ, it predicts B from Γ;
-        </li>
-        <li>
-          → Introduction: \((\Gamma, A) \vdash B \mid \Gamma \vdash A \rightarrow B\):<br>If the model predicts B from Γ and A, it predicts A → B from Γ;
-        </li>
-        <li>
-          → Elimination: \(((\Gamma \vdash A \rightarrow B) , (\Gamma \vdash A)) \mid \Gamma \vdash B\):<br>If the model predicts A → B and A from Γ, it predicts B from Γ;
-        </li>
-        <li>
-          Left ∨ Introduction: \(\Gamma \vdash A \mid \Gamma \vdash A \vee B\):<br>If the model predicts A from Γ, it predicts A ∨ B from Γ for any B;
-        </li>
-        <li>
-          Right ∨ Introduction: \(\Gamma \vdash B \mid \Gamma \vdash A \vee B\):<br>If the model predicts B from Γ, it predicts A ∨ B from Γ for any A;
-        </li>
-        <li>
-          ∨ Elimination: \(((\Gamma \vdash A \vee B), (\Gamma, A \vdash C) , (\Gamma, B \vdash C)) \mid \Gamma \vdash C\):<br>If the model predicts A ∨ B from Γ, C from Γ and A, and C from Γ and B, it predicts C from Γ;
-        </li>
-        <li>
-          ¬ Introduction: \((\Gamma, A) \vdash \bot \mid \Gamma \vdash \neg A\):<br>If the model predicts ⊥ from Γ and A, it predicts ¬A from Γ
-        </li>
-        <li>
-          ¬ Elimination: \(((\Gamma \vdash A), (\Gamma \vdash \neg A)) \mid \Gamma \vdash \bot\):<br>If the model predicts A and ¬A from Γ, it predicts ⊥ from Γ
-        </li>
-        <li>
-          ⊤ Introduction: \(\emptyset \mid \Gamma \vdash \top\):<br>The model can predict ⊤ from any context Γ
-        </li>
-        <li>
-          ⊥ Elimination: \(\Gamma \vdash \bot \mid \Gamma \vdash A\):<br>If model predicts ⊥ from Γ, it can predict any A from Γ
-        </li>
+        <li>Axiom: From context Γ and token A, the model predicts A</li>
+        <li>∧ Introduction: If the model predicts A and B from Γ, it predicts A ∧ B from Γ</li>
+        <li>Left ∧ Elimination: If the model predicts A ∧ B from Γ, it predicts A from Γ</li>
+        <li>Right ∧ Elimination: If the model predicts A ∧ B from Γ, it predicts B from Γ</li>
+        <li>→ Introduction: If the model predicts B from Γ and A, it predicts A → B from Γ</li>
+        <li>→ Elimination: If the model predicts A → B and A from Γ, it predicts B from Γ</li>
+        <li>Left ∨ Introduction: If the model predicts A from Γ, it predicts A ∨ B from Γ for any B</li>
+        <li>Right ∨ Introduction: If the model predicts B from Γ, it predicts A ∨ B from Γ for any A</li>
+        <li>∨ Elimination: If the model predicts A ∨ B from Γ, C from Γ and A, and C from Γ and B, it predicts C from Γ</li>
+        <li>¬ Introduction: If the model predicts ⊥ from Γ and A, it predicts ¬A from Γ</li>
+        <li>¬ Elimination: If the model predicts A and ¬A from Γ, it predicts ⊥ from Γ</li>
+        <li>⊤ Introduction: The model can predict ⊤ from any context Γ</li>
+        <li>⊥ Elimination: If model predicts ⊥ from Γ, it can predict any A from Γ</li>
     </ol>
-
     <p>This approach allows the model to discover and utilize logical structures inherent in language. The model becomes capable of exploring multiple lines of thought, backtracking when it reaches contradictions, and forming complex chains of reasoning.</p>
     <p>Implementation involves modifying the decoding process to maintain and work with multiple token sequences simultaneously. The training process is adjusted to reward the model for maintaining a diverse yet coherent set of possibilities.</p>
 
