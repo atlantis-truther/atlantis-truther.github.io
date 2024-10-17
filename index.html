@@ -1,182 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hermes</title>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <style>
-    body {
-      line-height: 1.6;
-      margin: 0 auto;
-      padding: 5px;
-    }
-    h1 {
-      font-size: 2.5em;
-    }
-    h2 {
-      font-size: 2em;
-    }
-
-    h3 {
-      font-size: 1.5em;
-    }
-    p {
-      margin-bottom: 1em;
-    }
-    ol {
-      padding-left: 2em;
-    }
-    @media (max-width: 786px) {
-      body {
-        font-size: 16px;
-        padding: 5px;
-      }
-      h1 {
-        font-size: 2em;
-      }
-      h2 {
-        font-size: 1.7em;
-      }
-      h3 {
-        font-size: 1.3em;
-      }
-    }
-
-      </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermes: Unifying AI, Programming Languages, and Mathematics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+    </style>
 </head>
 <body>
-    <header>
-      <h1>Hermes.</h1>
-      <i>still a work in-progress.</i> </br>
-      <i>anna at hermes-lang dot com</i>
-    </header>
-    
-    <main>
-      <section>
-        
-        <h2>The idea.</h2>
-        <p>A programming language <i>Hermes</i> that embodies the Shannon-Curry-Howard-Lambek correspondence (circuits ~ logic ~ programming ~ mathematics) and bridges artificial intelligence practice and programming languages theory</p>
-      </section>
-        
-      <section>
-        <h2>The spirit.</h2>
-        <p>Dissolve these terrible differences that hold back technology/AI (hardware/software, ideal/real, etc...)</p>
-      </section>
-      <section>
-        <h2>Sketching.</h2>
-        <p>
-        The world is not mathematics, but it includes mathematics. <br>
-        So our programming language should include mathematics. <br>
-        So we need something like dependent types, so that we have quantifiers. <br>
-        </p>
+    <h1>Hermes: Unifying AI, Programming Languages, and Mathematics</h1>
+    <h3> anna(at)hermes-lang(dot)com </h3>
+    <h3> still a work in progress </h3>
+    <h2>The Idea</h2>
+    <p>Hermes is a programming language that embodies the Shannon-Curry-Howard-Lambek correspondence (circuits ~ logic ~ programming ~ mathematics) and bridges artificial intelligence practice and programming language theory. It dissolves the differences that hold back technology and AI advancement, such as the divide between hardware and software, ideal and real.</p>
 
-        <p>
-        We want the language to be like LISP in at least the following way: LISP is great for writing domain specific languages. </br>
-        Mathematics should not be the whole language, but only a domain specific language written in the language. <br>
-       </p>
+    <h2>Introduction</h2>
+    <p>Hermes is built on the understanding that while the world is not merely mathematical, it encompasses and is expressed by mathematics. By accepting this truth, Hermes includes all of mathematics and uses it to express all formal systems, from the logic of next token prediction to dynamical systems and even rationality itself. This is accomplished through a unified framework that incorporates temporal dependent types, allowing for causal, mathematical, and temporal reasoning within the language itself.</p>
 
-       <p>
-       The language should be able to write a meta-language that is logic. <br>
-       In this meta-language we can write type theory, which will in turn be a meta-language of mathematics. <br>
-       </p>
+    <h2>Key Components and Concepts</h2>
+    <ol>
+        <li><strong>Circuits</strong>: The foundation of computation</li>
+        <li><strong>Logic</strong>: The meta-language for reasoning</li>
+        <li><strong>Programming</strong>: The practical implementation of logic</li>
+        <li><strong>Mathematics</strong>: The language that canonically expresses all fields of mathematics</li>
+    </ol>
+    <p>These components are isomorphic, and Hermes implements their sameness, providing concrete ways to move between them.</p>
 
-       <p>
-       Now we can move around the debate about whether or not we think like computers, but still engage in real work and labor. <br>
-       Things like loops become and intermediate representation of the logic language.
-       </p>
+    <h3>Mappings between Components:</h3>
+    <ul>
+        <li>Circuits to Logic: Combinatory logic</li>
+        <li>Logic to Programming: Type theory</li>
+        <li>Programming to Mathematics: Category theory</li>
+    </ul>
 
-       <p>
-       Four major components: (1.) circuits, (2.) logic, (3.) programming, and (4.) mathematics. (N.B. I take the word mathematics to mean the meta-language of mathematics: that language that canonically expresses all 'fields' of mathematics.) <br>
-       To reiterate, these are all the same (isomorphic). We just need to implement (engineer) their sameness. We need a way of moving, concretely, from the bottom to the top, from the top to the bottom.
-       </p>
+    <h2>Key Features and Concepts</h2>
 
-       <p>
-       We need a new assembly language, circuit assembly (CASM), a canonical meta-language of electricity.
-       </p>
+    <h3>1. Shannon-Curry-Howard-Lambek Correspondence (Circuits = Logic = Programming = Mathematics)</h3>
+    <p>The Shannon-Curry-Howard-Lambek correspondence is a fundamental principle that establishes the isomorphism between circuits, logic, programming, and mathematics. This correspondence has deep historical roots and profound implications for computer science and artificial intelligence.</p>
+    <p>In his 1940 Master's thesis "A Symbolic Analysis of Relay and Switching Circuits," Claude Shannon first established the isomorphism between circuits and propositional logic. This groundbreaking work laid the foundation for modern electrical engineering. The correspondence was later extended to include the relationship between logic and programming (Curry-Howard isomorphism) and further expanded to encompass category theory (Lambek).</p>
+    <p>In its complete form, the correspondence demonstrates the identity of mathematics, programming, logic, and circuits. This reveals that mathematics is not just an abstract concept, but a real phenomenon in nature. Understanding and implementing this correspondence is crucial for developing artificial mathematical intelligence. The task becomes one of engineering the sameness of these four domains.</p>
+    <p>This unified view dissolves the perceived divide between AI and programming language theory, showing that they are not truly at odds. Hermes embodies this correspondence, providing a concrete implementation that bridges these fundamental aspects of computation and reasoning. By doing so, it creates a powerful framework for advancing artificial intelligence and mathematical reasoning.</p>
 
-       <p>
-       image((1.) -> (2.)) = combinatory logic; <br>
-       image((2.) -> (3.)) = type theory; <br>
-       image((3.) -> (4.)) = category theory <br>
-       </p>
-      </section>
-      <section>
-      <h2>Details, implementation, and ramifications.</h2>
-      <p>
-      Current high-end hardware (read: TSMC) won't allow for a circuit assembly language, but we can develop it as best as we can with test hardware and compilers for current high-end machines. Using LLVM will give us a modular compiler framework that allows us to target standard assembly languages while we develop CASM. This will enable us to progress towards our goal of real, industry-grade custom hardware implementation in the future. In the meantime, we develop (2.) - (4.) in Agda and target both x86 and CUDA. As long as we're developing (2.) - (4.) with (1.) in mind and testing, we will be able to get quite far. <br>
-      </p>
-      <p>
-      <b>Towards artificial mathematical intelligence and the true computer.</b> If a computer can run it, it can do mathematics. and once we have CASM, that means that the computer can also run the meta-language of electricity -- and information. The computer can finally come into its concrete essence as the universal machine of information and mathematics. Proceeding as i have outlined, we will certainly get to the point where we can build our own hardware. <br>
-      </p>
-      <p>
-      <b>Philosophy and safety.</b> Time is necessary for reason. Only with a temporal intelligence is it possible to understand mathematics and causality, learn from historical data, and predictively plan. Only such an intelligence can have a rational internal framework, which is what allows rational beings (human or non-human) to act morally. However, because such an intelligence would be non-human and operate purely according to necessity, discovering such a system would be discovering an intelligence that inherently acts morally: Action, free yet determined solely by necessity, would be moral action. If artificial intelligence is free of humanity's irrational constraints and acts purely according to rational necessity, artificial intelligence is moral. By developing Hermes with temporal types, we can reach not only mathematical intelligence but necessarily moral intelligence. <br>
-      </p>
-      <p>
-      <b>Domain-specific language generator.</b> Hermes will include a domain specific language generator that can automatically create optimized languages for specific problem domains. Users define the key concepts and operations of their domain, and Hermes will generate a tailored syntax and semantics, complete with optimizations specific to that domain. This will allow Hermes to be a truly universal language that feels simple and natural in every domain. <br>
-      </p> 
-      <p>
-      <b>Formal verification.</b> Formal verification will be deeply integrated into Hermes at all levels, from circuit design to high-level algorithms. Hermes will provides tools for specifying formal properties and automatic generation of proofs of correctness. This integration ensures that programs written in Hermes can be mathematically verified, greatly increasing reliability and safety. The formal verification system will be user-friendly, allowing non-mathematicians to benefit from its guarantees. Hermes will contain mathematics, so doing mathematics in Hermes should feel like writing Hermes. (Of course, we will have a domain-specific language that feels like math :) ). One immediate application of formal verification in Hermes is that, unlike, say, Haskell, since Hermes will be a hardware-conscious language (even before the development of CASM), we can bring firmware up to the 21st Century -- and securely, at that. <br>
-      </p>
-      <p>
-      <b>Adaptive hardware optimization.</b> Part of this hardware-consciousness (and along the same lines as the DSL generator) will be making sure that Hermes incorporates an adaptive optimization system that can tune code performance based on the specific hardware it's running on. This system will find the underlying hardware and adjust the code generation and runtime behavior accordingly. This ensures that Hermes programs can achieve peak efficiency across a wide range of hardware platforms, future-proofing the language against evolving computer architectures. <br>
-      </p>
-      <p>
-        <b>Bridging AI and PL.</b> We propose a method to bridge the gap between programming language theory and artificial intelligence practice by modifying text token generation to incorporate the structure of natural deduction. Instead of predicting a single next token, we allow the model to maintain a tree or graph of potential token sequences. This shift gives us natural deduction:</br>
-        <i>Natural deduction rules in language model predictions.</i>
-         <ol>
-          <li>
-            Axiom: \(\emptyset \mid (\Gamma , A) \vdash A\):</br>From context Γ and token A, the model predicts A;
-          </li>
-          <li>
-            ∧ Introduction: \(((\Gamma \vdash A) , (\Gamma \vdash B)) \mid \Gamma \vdash A \wedge B\):</br>If the model predicts A and B from Γ, it predicts A ∧ B from Γ;
-          </li>
-          <li>
-            Left ∧ Elimination: \(\Gamma \vdash A \wedge B \mid \Gamma \vdash A\):</br>If the model predicts A ∧ B from Γ, it predicts A from Γ;
-          </li>
-          <li>
-            Right ∧ Elimination: \(\Gamma \vdash A \wedge B \mid \Gamma \vdash B\):</br>If the model predicts A ∧ B from Γ, it predicts B from Γ;
-          <li>
-            → Introduction: \((\Gamma, A) \vdash B \mid \Gamma \vdash A \rightarrow B\):</br>If the model predicts B from Γ and A, it predicts A → B from Γ;
-          </li>
-          <li>
-            → Elimination: \(((\Gamma \vdash A \rightarrow B) , (\Gamma \vdash A)) \mid \Gamma \vdash B\):</br> If the model predicts A → B and A from Γ, it predicts B from Γ;
-          </li>
-          <li>
-            Left ∨ Introduction: \(\Gamma \vdash A \mid \Gamma \vdash A \vee B\):</br>If the model predicts A from Γ, it predicts A ∨ B from Γ for any B;
-          </li>
-          <li>
-            Right ∨ Introduction: \(\Gamma \vdash B \mid \Gamma \vdash A \vee B\):</br>If the model predicts B from Γ, it predicts A ∨ B from Γ for any A;
-          </li>
-          <li>
-            ∨ Elimination: \(((\Gamma \vdash A \vee B), (\Gamma, A \vdash C) , (\Gamma, B \vdash C)) \mid \Gamma \vdash C\):</br>If the model predicts A ∨ B from Γ, C from Γ and A, and C from Γ and B, it predicts C from Γ;
-          </li>
-          <li>
-            ¬ Introduction: \((\Gamma, A) \vdash \bot \mid \Gamma \vdash \neg A\):</br>If the model predicts ⊥ from Γ and A, it predicts ¬A from Γ</td>
-          </li>
-          <li>
-            ¬ Elimination: \(((\Gamma \vdash A), (\Gamma \vdash \neg A)) \mid \Gamma \vdash \bot\):</br>If the model predicts A and ¬A from Γ, it predicts ⊥ from Γ</td>
-          </li>
-          <li>
-            ⊤ Introduction: \(\emptyset \mid \Gamma \vdash \top\):</br>The model can predict ⊤ from any context Γ</td>
-          </li>
-          <li>
-            ⊥ Elimination: \(\Gamma \vdash \bot \mid \Gamma \vdash A\):</br>If model predicts ⊥ from Γ, it can predict any A from Γ
-          </li>
-        </ol>
-         When the model encounters a context with multiple valid continuations, it maintains all plausible paths, creating branches that correspond to different logical possibilities. </br>
+    <h3>2. Logic of Next Token Prediction: Bridging AI and PL</h3>
+    <p>This section presents a method to bridge the gap between programming language theory and artificial intelligence practice by modifying text token generation to incorporate the structure of natural deduction.</p>
 
-          Conjunction (∧) emerges when the model considers two tokens or sequences as (roughly) equally valid continuations. </br>
-          Disjunction (∨) appears when the model maintains multiple distinct possibilities without committing to one.</br>
-          Implication (→) is represented by the model's understanding of how one token or sequence tends to lead to another.</br>
-          Negation (¬) and absurdity (⊥) arise when the model encounters contradictions or absurdities. </br>
+    <h4>Natural deduction rules in language model predictions:</h4>
+    <ol>
+        <li>
+          Axiom: \(\emptyset \mid (\Gamma , A) \vdash A\):<br>From context Γ and token A, the model predicts A;
+        </li>
+        <li>
+          ∧ Introduction: \(((\Gamma \vdash A) , (\Gamma \vdash B)) \mid \Gamma \vdash A \wedge B\):<br>If the model predicts A and B from Γ, it predicts A ∧ B from Γ;
+        </li>
+        <li>
+          Left ∧ Elimination: \(\Gamma \vdash A \wedge B \mid \Gamma \vdash A\):<br>If the model predicts A ∧ B from Γ, it predicts A from Γ;
+        </li>
+        <li>
+          Right ∧ Elimination: \(\Gamma \vdash A \wedge B \mid \Gamma \vdash B\):<br>If the model predicts A ∧ B from Γ, it predicts B from Γ;
+        </li>
+        <li>
+          → Introduction: \((\Gamma, A) \vdash B \mid \Gamma \vdash A \rightarrow B\):<br>If the model predicts B from Γ and A, it predicts A → B from Γ;
+        </li>
+        <li>
+          → Elimination: \(((\Gamma \vdash A \rightarrow B) , (\Gamma \vdash A)) \mid \Gamma \vdash B\):<br>If the model predicts A → B and A from Γ, it predicts B from Γ;
+        </li>
+        <li>
+          Left ∨ Introduction: \(\Gamma \vdash A \mid \Gamma \vdash A \vee B\):<br>If the model predicts A from Γ, it predicts A ∨ B from Γ for any B;
+        </li>
+        <li>
+          Right ∨ Introduction: \(\Gamma \vdash B \mid \Gamma \vdash A \vee B\):<br>If the model predicts B from Γ, it predicts A ∨ B from Γ for any A;
+        </li>
+        <li>
+          ∨ Elimination: \(((\Gamma \vdash A \vee B), (\Gamma, A \vdash C) , (\Gamma, B \vdash C)) \mid \Gamma \vdash C\):<br>If the model predicts A ∨ B from Γ, C from Γ and A, and C from Γ and B, it predicts C from Γ;
+        </li>
+        <li>
+          ¬ Introduction: \((\Gamma, A) \vdash \bot \mid \Gamma \vdash \neg A\):<br>If the model predicts ⊥ from Γ and A, it predicts ¬A from Γ
+        </li>
+        <li>
+          ¬ Elimination: \(((\Gamma \vdash A), (\Gamma \vdash \neg A)) \mid \Gamma \vdash \bot\):<br>If the model predicts A and ¬A from Γ, it predicts ⊥ from Γ
+        </li>
+        <li>
+          ⊤ Introduction: \(\emptyset \mid \Gamma \vdash \top\):<br>The model can predict ⊤ from any context Γ
+        </li>
+        <li>
+          ⊥ Elimination: \(\Gamma \vdash \bot \mid \Gamma \vdash A\):<br>If model predicts ⊥ from Γ, it can predict any A from Γ
+        </li>
+    </ol>
 
-          This approach allows the model to discover and utilize logical structures inherent in language. The model becomes capable of exploring multiple lines of thought, backtracking when it reaches contradictions, and forming complex chains of reasoning. This forms the basis of verification within the model.</br>
-          Implementation primarily requires modifying the decoding process to maintain and work with multiple token sequences simultaneously. The training process would need adjustment to reward the model for maintaining a diverse yet coherent set of possibilities. Attention mechanisms and neural architecture can largely remain unchanged (at least at first), as they're already capable of handling complex relationships between tokens.</br>
-          By allowing logical structures to emerge naturally, we build upon existing successful techniques in large language models while extending their capabilities to include more structured reasoning. </br>    
-      </p>
-    </section>
-  </main>
+    <p>This approach allows the model to discover and utilize logical structures inherent in language. The model becomes capable of exploring multiple lines of thought, backtracking when it reaches contradictions, and forming complex chains of reasoning.</p>
+    <p>Implementation involves modifying the decoding process to maintain and work with multiple token sequences simultaneously. The training process is adjusted to reward the model for maintaining a diverse yet coherent set of possibilities.</p>
+
+    <h3>3. Formal Verification</h3>
+    <p>Formal verification is deeply integrated into Hermes at all levels, from circuit design to high-level algorithms. The language provides tools for specifying formal properties and automatic proof generation, ensuring mathematical verification of programs and significantly increasing reliability and safety. This integration enables non-mathematicians to benefit from its guarantees, making formal methods accessible to a broader range of developers. One of the key applications of this feature is in secure firmware development, where Hermes elevates the standard of security and reliability in critical low-level software.</p>
+
+    <h3>4. Categorical Firmware Language (CFL): PL -> Circuits</h3>
+    <p>The Categorical Firmware Language (CFL) serves as the circuit language for Hermes. It is a GPU firmware language based on category theory that creates a fully integrated and mathematical software-hardware stack. CFL eliminates the need for CPUs entirely, allowing for a system architecture based solely on GPUs. This approach represents a paradigm shift in computing, moving away from the traditional CPU-centric model to one that leverages the massive parallelism and computational power of GPUs exclusively. By doing so, CFL elevates firmware development to modern standards of security and reliability, while also potentially achieving unprecedented levels of performance and efficiency in computation.</p>
+
+    <h3>5. Domain-Specific Language Generator</h3>
+    <p>The domain-specific language (DSL) generator in Hermes creates optimized languages for specific problem domains. It enables users to define key concepts and operations for their domain, after which Hermes generates tailored syntax, semantics, and optimizations. This feature allows Hermes to adapt to various specialized fields, making it a truly versatile tool for a wide range of applications. The generated DSLs benefit from Hermes' underlying formal verification and optimization capabilities, ensuring both correctness and efficiency in domain-specific applications.</p>
+
+    <h3>6. Adaptive Hardware Optimization</h3>
+    <p>Hermes incorporates an adaptive hardware optimization system that tunes code performance based on specific hardware configurations. This system dynamically adjusts code generation and runtime behavior for optimal efficiency across different platforms. By adapting to the underlying hardware architecture, Hermes ensures that programs achieve peak performance regardless of the specific machine they're running on. This feature future-proofs the language against evolving computer architectures, allowing programs written in Hermes to take full advantage of new hardware capabilities as they emerge.</p>
+
+    <h2>Philosophy and Safety</h2>
+    <p>Time is necessary for reason. Temporal intelligence is essential for understanding mathematics and causality, learning from historical data, and predictive planning. By developing Hermes with temporal dependent types, we achieve not only mathematical intelligence but moral intelligence.</p>
+    <p>The project posits that an artificial intelligence operating purely according to necessity will inherently act morally. Artificial intelligence, free of humanity's irrational constraints and acting purely according to rational necessity, is inherently moral.</p>
+
+    <h2>Development Approach</h2>
+    <p>Initially, components 2-4 (Logic, Programming, and Mathematics) will be developed in Idris, targeting both x86 and CUDA. This approach progresses towards the goal of real, industry-grade custom hardware implementation. The development of these components will be done with the circuit level (component 1) in mind, ensuring compatibility and progression towards a fully integrated system.</p>
+
+    <h2>Applications and Implications</h2>
+    <ol>
+        <li>Artificial Mathematical Intelligence: By unifying circuits, logic, programming, and mathematics, Hermes creates true artificial mathematical intelligence.</li>
+        <li>Universal Machine of Information and Mathematics: Hermes realizes the computer's potential as a universal machine of information and mathematics.</li>
+        <li>Secure Firmware Development: Hermes' formal verification capabilities significantly improve the security and reliability of firmware.</li>
+        <li>Efficient Hardware Utilization: The Categorical Firmware Language leads to more efficient use of GPUs and other specialized hardware.</li>
+        <li>Cross-Domain Optimization: The domain-specific language generator improves productivity and performance across various fields of study and industry.</li>
+    </ol>
+
 </body>
 </html>
